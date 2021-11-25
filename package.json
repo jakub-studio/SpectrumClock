@@ -2,6 +2,7 @@
   "name": "colour-clock-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jakuski.github.io/SpectrumClock/build/",
   "dependencies": {
     "@stitches/react": "^1.2.5",
     "@testing-library/jest-dom": "^5.11.4",
