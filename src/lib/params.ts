@@ -1,12 +1,22 @@
 export const params = new URLSearchParams(window.location.search);
+export const Parameter = <T extends unknown>(name: string, format?: (value: string | null) => T): T => {
+	const paramValue = params.get(name);
+	let returnValue = paramValue as unknown;
+
+	if (typeof format === "function") {
+		returnValue = format(paramValue);
+	}
+
+	return returnValue as T;
+}
 
 export enum ParamNames {
 	DATE = "d",
 	PAUSED = "p"
 }
 
-const dateParam = params.get(ParamNames.DATE);
-export const date = dateParam ? new Date(dateParam) : null;
+export const date = Parameter(ParamNames.DATE, date => {
+	return date ? new Date(date) : null
+});
 
-const pausedParam = params.get(ParamNames.PAUSED);
-export const paused = Boolean(pausedParam);
+export const paused = Parameter(ParamNames.PAUSED, Boolean);
