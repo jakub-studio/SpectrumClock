@@ -10,7 +10,7 @@
 <img width="343" alt="The Spectrum Clock screenshot" src="https://user-images.githubusercontent.com/34782021/143719715-37b9f22a-d39a-4f10-a228-85ad0318a4e3.png">
 
 ## What is this?
-A clock that tells time using colour and rotations. Please note that it will not be finished and bugs will remain due to [technical limitations](https://github.com/jakuski/SpectrumClock/blob/master/README.md#the-spectrum-clock) that I did not find out about until later in the project.
+A clock that tells time using colour and rotations. Please note that it will not be finished and bugs will remain due to [technical limitations](https://github.com/jakuski/SpectrumClock#technical-difficulties) that I did not find out about until later in the project.
 
 ## How?
 <p align="center"><img width="794" alt="Colours with their assigned numbers" src="https://user-images.githubusercontent.com/34782021/143721695-5957460d-560f-47fa-b73e-19b7ee0da58e.png"></p>
