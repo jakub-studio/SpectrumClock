@@ -5,6 +5,7 @@ import React, { memo, useCallback, useRef } from 'react';
 import { TimeState, useRing, useSharedTimeState } from './hooks/useTime';
 import { date, ParamNames, params } from './lib/params';
 import shallow from "zustand/shallow";
+import { useFullscreen } from './hooks/useFullscreen';
 
 const groups: GroupNames[] = ["year", "month", "date", "hour", "minute", "second"];
 
@@ -206,12 +207,28 @@ const StateControllerButtons = () => {
 	</div>
 }
 
+const FullscreenController = () => {
+	const { fullscreened, toggle } = useFullscreen();
+	return <button onClick={toggle}>{fullscreened ? "exit fullscreen" : "fullscreen"}</button>
+}
+
+const ControllerButtons = styled("div", {
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+	gap: '8px',
+	marginBottom: '8px'
+});
+
 
 function App() {
 	return (
 		<div className="App">
 			<div>
-				<StateControllerButtons />
+				<ControllerButtons>
+					<StateControllerButtons />
+					<FullscreenController />
+				</ControllerButtons>
 				<form>
 					<input type="datetime-local" name={ParamNames.DATE} defaultValue={date ? params.get(ParamNames.DATE) + "" : void 0} required />
 					<input type="hidden" name={ParamNames.PAUSED} value="1" />

@@ -1,6 +1,8 @@
 body {
-  margin: 0;
+  --bg-colour: white;
+  margin: 8px;
   overflow: hidden;
+  background-color: var(--bg-colour);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -11,4 +13,14 @@ body {
 code {
   font-family: 'IBM Plex Mono', monospace;
   font-feature-settings: 'ss04' on, 'salt' on;
+}
+
+body:fullscreen {
+  background-color: var(--bg-colour);
+}
+body:-webkit-full-screen {
+  background-color: var(--bg-colour);
+}
+body:-moz-full-screen {
+  background-color: var(--bg-colour);
 }
