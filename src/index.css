@@ -14,13 +14,3 @@ code {
   font-family: 'IBM Plex Mono', monospace;
   font-feature-settings: 'ss04' on, 'salt' on;
 }
-
-body:fullscreen {
-  background-color: var(--bg-colour);
-}
-body:-webkit-full-screen {
-  background-color: var(--bg-colour);
-}
-body:-moz-full-screen {
-  background-color: var(--bg-colour);
-}
