@@ -8,7 +8,7 @@ import shallow from "zustand/shallow";
 
 const groups: GroupNames[] = ["year", "month", "date", "hour", "minute", "second"];
 
-const RING_BASE_SIZE = 300;
+const RING_BASE_SIZE = 250;
 const RING_REDUCTION = 40;
 
 const RingContainer = styled("div", {
@@ -27,9 +27,9 @@ interface RingControllerProps {
 const RingProgressionPointer = styled("div", {
 	position: "absolute",
 	top: 3,
-	width: 2,
-	height: 10,
-	borderRadius: "30%",
+	width: 4,
+	height: 4,
+	borderRadius: "100%",
 	opacity: 1,
 	backgroundColor: "hsla(0, 0%, 0%, 0.75)",
 	transition: "top 0.175s ease",
@@ -134,7 +134,7 @@ const NewRing = () => {
 			<RingController representing="date"/>
 			<RingController representing="hour"/>
 			<RingController representing="minute"/>
-			<RingController representing="second"/>
+			{/* <RingController representing="second"/> */}
 	</RingContainer>
 }
 
@@ -179,8 +179,8 @@ const TimeString = () => {
 		<TimeGroup bold={currentGroup === "month"}>{padNum(date.getMonth() + 1, 2)}</TimeGroup>/
 		<TimeGroup bold={currentGroup === "date"}>{padNum(date.getDate(), 2)}</TimeGroup>{" "}
 		<TimeGroup bold={currentGroup === "hour"}>{padNum(date.getHours(), 2)}</TimeGroup>:
-		<TimeGroup bold={currentGroup === "minute"}>{padNum(date.getMinutes(), 2)}</TimeGroup>:
-		<TimeGroup bold={currentGroup === "second"}>{padNum(date.getSeconds(), 2)}:{ms}</TimeGroup>
+		<TimeGroup bold={currentGroup === "minute"}>{padNum(date.getMinutes(), 2)}</TimeGroup>{/* :
+		<TimeGroup bold={currentGroup === "second"}>{padNum(date.getSeconds(), 2)}:{ms}</TimeGroup> */}
 	</TimeGroupContainer>
 }
 
